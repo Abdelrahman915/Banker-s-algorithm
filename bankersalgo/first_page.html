@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="first_page.css">
+</head>
+<body>
+
+    <div class="alkbeer">
+        <div><h2>Please Make sure to press the Apply Button For Each Table Before Pressing The Check Button </h2></div>
+        <div class="part1">
+            <div class="current allocated">
+                <h2>Current Allocated</h2>
+
+                <form action="#" method="post">    
+                    <table id="allocatedtable">
+                        <tr>
+                            <th>P</th>
+                            <th>R1</th>
+                            <th>R2</th>
+                            <th>R3</th> 
+                            <th>R4</th>
+                             
+
+                        </tr> 
+                        <tr>
+                            <td id="col0">P0   </td>
+                            <td id="col1"><input type="number" name="R1[]" value="0"min="0" pattern="[0-9]+" /></td>
+                            <td id="col2"><input type="number" name="R2[]" value="0" min="0" pattern="[0-9]+"/></td> 
+                            <td id="col3"><input type="number" name="R3[]" value="0" min="0" pattern="[0-9]+"/></td>
+                            <td id="col4"><input type="number" name="R4[]" value="0" min="0" pattern="[0-9]+"/></td> 
+                            
+                        </tr>  
+                    </table> 
+                    <table> 
+                        <tr> 
+                            <td><input type="button" value="Add Process" onclick="addRows();"/></td> 
+                            <td><input type="button" value="Delete Process" onclick="deleteRows()" /></td> 
+                            <td><input type="button" value="Apply" onclick="apply()" /></td> 
+
+                            <!-- <td><input type="submit" value="Submit" /></td>  -->
+                        </tr>  
+                    </table> 
+                 </form> 
+
+            </div>
+
+
+
+
+        </div>
+        <div class="part2">
+            <div class="Max need">
+            <h2>Max Need </h2>
+
+                <form action="#" method="post">    
+                    <table id="maxneedtable">
+                        <tr>
+                            <th>P</th>
+                            <th>R1</th>
+                            <th>R2</th>
+                            <th>R3</th> 
+                            <th>R4</th>
+                             
+
+                        </tr> 
+                        <tr>
+                            <td id="col0">P0   </td>
+                            <td id="mcol1"><input type="number" name="mR1[]" value="0" min="0" pattern="[0-9]+"required/></td>
+                            <td id="mcol3"><input type="number" name="mR3[]" value="0" min="0" pattern="[0-9]+"required/></td>
+                            <td id="mcol2"><input type="number" name="mR2[]" value="0" min="0" pattern="[0-9]+"required/></td> 
+                            <td id="mcol4"><input type="number" name="mR4[]" value="0" min="0" pattern="[0-9]+"required/></td> 
+                            
+                        </tr>  
+                    </table> 
+                    <table> 
+                        <tr> 
+                            <td><input type="button" value="Add Process" onclick="maddRows();" /></td> 
+                            <td><input type="button" value="Delete Process" onclick="mdeleteRows();" /></td> 
+                            <td><input type="button" value="Apply" onclick="mapply()" /></td> 
+
+                            <!-- <td><input type="submit" value="Submit" /></td>  -->
+                        </tr>  
+                    </table> 
+                 </form> 
+
+
+            </div>
+
+
+
+        </div>
+        <div class="part3">
+
+            <div class="availablr">
+                <h2>Available Resources </h2>
+    
+                    <form action="#" method="post">    
+                        <table id="Available">
+                            <tr>
+                                
+                                <th>R1</th>
+                                <th>R2</th>
+                                <th>R3</th> 
+                                <th>R4</th>
+                                 
+    
+                            </tr> 
+                            <tr>
+                                
+                                <td><input type="number" value="0"min="0" pattern="[0-9]+" /></td>
+                                <td><input type="number" value="0"min="0" pattern="[0-9]+" /></td>
+                                <td><input type="number" value="0"min="0" pattern="[0-9]+" /></td> 
+                                <td><input type="number" value="0"min="0" pattern="[0-9]+" /></td> 
+                                
+                            </tr>  
+                        </table> 
+                        <table> 
+                            <tr> 
+                                 
+                                <td><input type="button" value="Apply" onclick="applyavailable()" /></td> 
+                            </tr>  
+                        </table>
+                     </form> 
+    
+    
+                </div>
+        </div>
+        <div class="part4">
+
+            <div class="total">
+                <h2>Total Resources </h2>
+    
+                    <form action="#" method="post">    
+                        <table id="total">
+                            <tr>
+                                
+                                <th>R1</th>
+                                <th>R2</th>
+                                <th>R3</th> 
+                                <th>R4</th>
+                                 
+    
+                            </tr> 
+                            <tr>
+                                
+                                <td><input type="number" value="0"min="0" pattern="[0-9]+" /></td>
+                                <td><input type="number" value="0"min="0" pattern="[0-9]+" /></td>
+                                <td><input type="number" value="0"min="0" pattern="[0-9]+"/></td> 
+                                <td><input type="number" value="0"min="0" pattern="[0-9]+" /></td> 
+                                
+                            </tr>  
+                        </table> 
+                        <table> 
+                            <tr>   
+                                <td><input type="button" value="Apply" onclick="applytotal()" /></td> 
+                            </tr>  
+                        </table> 
+                     </form> 
+    
+    
+            </div>
+           
+
+        </div>
+
+        <div class="check">
+            <table> 
+                <tr> 
+                    <td><button value="Check" onclick="check()" style="width: 80px;">Check</button></td> 
+                   <!-- <td> <button onclick="document.getElementById('id01').style.display='block';populateDropDown()" style="width: 50p;">Modify</button></td>
+                    <td><input type="submit" value="Submit" /></td>  -->
+                </tr>  
+            </table> 
+
+        </div>
+
+
+        <div id="id01" class="modal">
+  
+            <form class="modal-content animate" >
+              <div class="imgcontainer">
+                <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+                <img src="linux.png" alt="Avatar" class="avatar">
+              </div>
+          
+              <div class="container">
+                <!-- <h2><b>Choose The Process and the Resource you want to Modify  </b></h2> -->
+                
+                <label for="">Enter process number</label>
+                <input type="number" placeholder="ex.3" id="procnum"min="0" pattern="[0-9]+" required/>
+                <label for="">Enter Resource number </label>
+                <input type="number" placeholder="ex.3" id="resnum"min="0" pattern="[0-9]+"required/><br>
+                <br>
+                <label for="">Enter Requested Value</label>
+                <input type="number" placeholder="ex.3" id="resvalue" min="0" pattern="[0-9]+" required />
+                
+                  
+                <button type="submit" onclick="check()">Check</button>
+                
+              </div>
+            </form>
+        </div>
+    </div>
+
+
+ </body>
+
+ <script src="first_page.js"></script>
+
+ <script>
+    // Get the modal
+    var modal = document.getElementById('id01');
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+ </script>
+
+</html> 
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

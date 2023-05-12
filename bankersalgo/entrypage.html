@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="entrypage.css">
+
+</head>
+<body>
+
+<h2>HI! it's Abdelrahman and i'm going to help you check whether you gonna fall in a deadlock or not.. </h2>
+
+<button onclick="document.getElementById('id01').style.display='block'" style="width: 50p;">Hi..!</button>
+
+<div id="id01" class="modal">
+  
+  <form class="modal-content animate" >
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+      <img src="Happy-Penguin.png" alt="Avatar" class="avatar">
+    </div>
+
+    <div class="container">
+      <h2><b>Give Me Number Of Recources  </b></h2>
+      <input type="number" placeholder="ex.5" name="res" id="res" value="4" min="4" max="4" required>
+
+      
+        
+      <button type="submit" onclick="submitForm(event)">Next</button>
+      
+    </div>
+  </form>
+</div>
+
+<script>
+// Get the modal
+var modal = document.getElementById('id01');
+function submitForm(event) {
+        event.preventDefault();
+        const res = document.getElementById("res").value;
+        localStorage.setItem("res", res);
+        window.location.href = "first_page.html";
+      }
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
+
+</body>
+<!-- <script src="first_page.js"></script> -->
+</html>
